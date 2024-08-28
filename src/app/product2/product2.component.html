@@ -1,0 +1,17 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>S.No.</td>
+            <td>Product Name</td>
+            <td>Product Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products | async; let i =index;">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr *ngIf="( products | async)?.length == 0"> No Record </tr>
+    </tbody>
+</table>
